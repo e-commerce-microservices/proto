@@ -25,7 +25,6 @@ message RegisterRequest {
 
 message UserClaimsResponse {
   string id = 1;
-  string user_name = 2;
   UserRole user_role = 3;
 }
 

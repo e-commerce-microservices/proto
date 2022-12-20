@@ -11,6 +11,6 @@ message GeneralResponse {
 
 enum UserRole {
   customer = 0;
-  seller = 1;
+  supplier = 1;
   admin = 2;
 }
