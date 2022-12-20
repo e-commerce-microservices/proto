@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ecommerce;
+
+option go_package = "github.com/e-commerce-microservices/service-auth/pb";
+
+message User {
+  string id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message LoginRequest {}
+
+message LoginResponse {}

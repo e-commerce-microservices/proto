@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/empty.proto";
+import "user_message.proto";
+
+option go_package = "github.com/e-commerce-microservices/user-service/pb";
+
+message BlockUserRequest { int64 user_id = 1; }
+message GetAllUserResponse { repeated User all_user = 1; }
+
+service AdminService {
+  rpc BlockUser(BlockUserRequest) returns (GeneralResponse) {}
+  rpc GetAllUser(google.protobuf.Empty) returns (GetAllUserResponse) {}
+}
