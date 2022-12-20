@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user;
 
-option go_package = "github.com/e-commerce-microservices/user-service/pb";
+option go_package = "./pb";
 
 message UserProfile {
   string user_name = 1;
