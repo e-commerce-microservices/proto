@@ -25,7 +25,7 @@ service UserService {
   rpc UpdatePassword(UpdatePasswordRequest) returns (GeneralResponse) {}
   rpc ForgotPassword(ForgotPasswordRequest) returns (GeneralResponse) {}
 
-  rpc SupplierRegister(SupplierRegisterRequest) returns (GeneralResponse) {}
+  rpc SupplierRegister(google.protobuf.Empty) returns (GeneralResponse) {}
   rpc SupplierReport(SupplierReportRequest) returns (GeneralResponse) {}
 }
 
@@ -82,5 +82,4 @@ message UpdatePasswordRequest {
 
 message ForgotPasswordRequest { string email = 1; }
 
-message SupplierRegisterRequest { int64 user_id = 1; }
 message SupplierReportRequest { int64 supplier_id = 1; }
