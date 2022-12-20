@@ -23,7 +23,7 @@ message RegisterRequest {
   string password = 3;
 }
 
-message UserClaims {
+message UserClaimsResponse {
   string id = 1;
   string user_name = 2;
   UserRole user_role = 3;
@@ -32,5 +32,5 @@ message UserClaims {
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
-  rpc GetUserClaims(google.protobuf.Empty) returns (UserClaims) {}
+  rpc GetUserClaims(google.protobuf.Empty) returns (UserClaimsResponse) {}
 }
