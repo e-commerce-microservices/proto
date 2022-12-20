@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package user;
+package proto;
 
 import "google/protobuf/empty.proto";
-import "pbuser/user_message.proto";
+import "general.proto";
 
-option go_package = "./pbuser";
+option go_package = "./pb";
 
 message ReportSupplierRequest { int64 user_id = 1; }
 
@@ -50,4 +50,38 @@ service UserService {
   rpc ForgotPassword(ForgotPasswordRequest) returns (GeneralResponse) {}
 
   rpc ReportSupplier(ReportSupplierRequest) returns (GeneralResponse) {}
+}
+
+message BlockUserRequest { int64 user_id = 1; }
+message GetAllUserResponse { repeated User all_user = 1; }
+
+service AdminService {
+  rpc BlockUser(BlockUserRequest) returns (GeneralResponse) {}
+  rpc GetAllUser(google.protobuf.Empty) returns (GetAllUserResponse) {}
+}
+
+message UserProfile {
+  string user_name = 1;
+  string phone = 2;
+  string avatar = 3;
+}
+
+message UserAddress {
+  string address = 1;
+  string note = 2;
+}
+
+enum UserRole {
+  Customer = 0;
+  Seller = 1;
+  Admin = 2;
+}
+
+message User {
+  int64 id = 1;
+  string email = 2;
+  UserRole role = 3;
+  bool active_status = 4;
+  UserProfile profile = 5;
+  repeated UserAddress address = 6;
 }
