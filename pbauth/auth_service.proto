@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package auth;
 
-import "pbauth/auth_message.proto";
-
 option go_package = "./pbauth";
 
 message LoginRequest {

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package auth;
+package common;
 
-option go_package = "./pbauth";
+option go_package = "./pbcommon";
 
 message GeneralResponse {
   string message = 1;

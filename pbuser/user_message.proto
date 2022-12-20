@@ -29,8 +29,3 @@ message User {
   UserProfile profile = 5;
   repeated UserAddress address = 6;
 }
-
-message GeneralResponse {
-  string message = 1;
-  int32 status_code = 2;
-}
