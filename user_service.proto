@@ -50,12 +50,6 @@ message UserAddress {
   string note = 2;
 }
 
-enum UserRole {
-  customer = 0;
-  seller = 1;
-  admin = 2;
-}
-
 message User {
   int64 id = 1;
   string email = 2;

@@ -2,7 +2,9 @@ syntax = "proto3";
 
 package proto;
 
+import "google/protobuf/empty.proto";
 import "general.proto";
+
 option go_package = "./pb";
 
 message LoginRequest {
@@ -21,8 +23,14 @@ message RegisterRequest {
   string password = 3;
 }
 
+message UserClaims {
+  string id = 1;
+  string user_name = 2;
+  UserRole user_role = 3;
+}
+
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
-  // rpc GetUserClaims()
+  rpc GetUserClaims(google.protobuf.Empty) returns (UserClaims) {}
 }

@@ -8,3 +8,9 @@ message GeneralResponse {
   string message = 1;
   int32 status_code = 2;
 }
+
+enum UserRole {
+  customer = 0;
+  seller = 1;
+  admin = 2;
+}
