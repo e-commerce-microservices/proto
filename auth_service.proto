@@ -24,4 +24,5 @@ message RegisterRequest {
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
+  // rpc GetUserClaims()
 }

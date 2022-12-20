@@ -7,33 +7,6 @@ import "general.proto";
 
 option go_package = "./pb";
 
-message ReportSupplierRequest { int64 user_id = 1; }
-
-message CreateUserRequest {
-  string email = 1;
-  string user_name = 2;
-  string password = 3;
-}
-message GetUserByEmailRequest {
-  string email = 1;
-  string password = 2;
-}
-
-message UpdateRoleRequest { UserRole new_role = 1; }
-
-message UpdateEmailRequest {
-  int64 user_id = 1;
-  string new_email = 2;
-}
-
-message UpdatePasswordRequest {
-  int64 user_id = 1;
-  string old_password = 2;
-  string new_password = 3;
-}
-
-message ForgotPasswordRequest { string email = 1; }
-
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (GeneralResponse) {}
   rpc ActiveUser(google.protobuf.Empty) returns (GeneralResponse) {}
@@ -49,12 +22,11 @@ service UserService {
   rpc AddAddress(UserAddress) returns (GeneralResponse) {}
   rpc UpdateAddress(UserAddress) returns (GeneralResponse) {}
 
-  rpc UpdateRole(UpdateRoleRequest) returns (GeneralResponse) {}
-
   rpc UpdatePassword(UpdatePasswordRequest) returns (GeneralResponse) {}
   rpc ForgotPassword(ForgotPasswordRequest) returns (GeneralResponse) {}
 
-  rpc ReportSupplier(ReportSupplierRequest) returns (GeneralResponse) {}
+  rpc SupplierRegister(SupplierRegisterRequest) returns (GeneralResponse) {}
+  rpc SupplierReport(SupplierReportRequest) returns (GeneralResponse) {}
 }
 
 message BlockUserRequest { int64 user_id = 1; }
@@ -90,3 +62,29 @@ message User {
   UserProfile profile = 5;
   repeated UserAddress address = 6;
 }
+
+message CreateUserRequest {
+  string email = 1;
+  string user_name = 2;
+  string password = 3;
+}
+message GetUserByEmailRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message UpdateEmailRequest {
+  int64 user_id = 1;
+  string new_email = 2;
+}
+
+message UpdatePasswordRequest {
+  int64 user_id = 1;
+  string old_password = 2;
+  string new_password = 3;
+}
+
+message ForgotPasswordRequest { string email = 1; }
+
+message SupplierRegisterRequest {}
+message SupplierReportRequest { int64 user_id = 1; }
