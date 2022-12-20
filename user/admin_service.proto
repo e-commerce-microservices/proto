@@ -9,7 +9,6 @@ option go_package = "github.com/e-commerce-microservices/user-service/pb";
 
 message BlockUserRequest { int64 user_id = 1; }
 message GetAllUserResponse { repeated User all_user = 1; }
-// test update
 
 service AdminService {
   rpc BlockUser(BlockUserRequest) returns (GeneralResponse) {}
