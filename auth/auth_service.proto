@@ -4,7 +4,7 @@ package auth;
 
 import "auth/auth_message.proto";
 
-option go_package = "./pb";
+option go_package = "./pbauth";
 
 message LoginRequest {
   string email = 1;

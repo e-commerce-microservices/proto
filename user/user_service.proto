@@ -5,7 +5,7 @@ package user;
 import "google/protobuf/empty.proto";
 import "user/user_message.proto";
 
-option go_package = "./pb";
+option go_package = "./pbuser";
 
 message ReportSupplierRequest { int64 user_id = 1; }
 
