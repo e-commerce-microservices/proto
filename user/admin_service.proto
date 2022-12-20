@@ -3,7 +3,7 @@ syntax = "proto3";
 package user;
 
 import "google/protobuf/empty.proto";
-import "user_message.proto";
+import "user/user_message.proto";
 
 option go_package = "github.com/e-commerce-microservices/user-service/pb";
 
