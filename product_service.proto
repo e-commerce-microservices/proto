@@ -3,6 +3,7 @@ syntax = "proto3";
 package proto;
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 import "general.proto";
 
 option go_package = "./pb";
@@ -35,8 +36,18 @@ message GetListProductRequest { int64 category_id = 1; }
 
 message GetListProductResponse { repeated Product list_product = 1; }
 
+message CreateCategoryRequest {
+  string name = 1;
+  int64 category_id = 2;
+}
+message GetListCategoryResponse { repeated int64 list_category = 1; }
+
 service ProductService {
   rpc CreateProduct(CreateProductRequest) returns (GeneralResponse) {}
   rpc GetProduct(GetProductRequest) returns (Product) {}
   rpc GetListProduct(GetListProductRequest) returns (GetListProductResponse) {}
+
+  rpc CreateCategory(CreateCategoryRequest) returns (GeneralResponse) {}
+  rpc GetListCategory(google.protobuf.Empty) returns (GetListCategoryResponse) {
+  }
 }
