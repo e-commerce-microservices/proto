@@ -28,8 +28,14 @@ message UserClaimsResponse {
   UserRole user_role = 3;
 }
 
+// AuthService handle authentication and authorization for ecommerces project
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
   rpc GetUserClaims(google.protobuf.Empty) returns (UserClaimsResponse) {}
+  rpc CustomerAuthorization(google.protobuf.Empty)
+      returns (UserClaimsResponse) {}
+  rpc SupplierAuthorization(google.protobuf.Empty)
+      returns (UserClaimsResponse) {}
+  rpc AdminAuthorization(google.protobuf.Empty) returns (UserClaimsResponse) {}
 }
