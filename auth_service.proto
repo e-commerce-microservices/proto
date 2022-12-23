@@ -32,7 +32,9 @@ message UserClaimsResponse {
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
-  rpc GetUserClaims(google.protobuf.Empty) returns (UserClaimsResponse) {}
+  rpc GetUserClaims(google.protobuf.Empty) returns (UserClaimsResponse) {
+    option deprecated = true;
+  }
   rpc CustomerAuthorization(google.protobuf.Empty)
       returns (UserClaimsResponse) {}
   rpc SupplierAuthorization(google.protobuf.Empty)
