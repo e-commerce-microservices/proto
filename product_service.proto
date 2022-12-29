@@ -47,6 +47,7 @@ message CreateCategoryRequest {
 message GetListCategoryResponse { repeated Category list_category = 1; }
 
 service ProductService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
   rpc GetProduct(GetProductRequest) returns (Product) {}
   rpc GetListProduct(GetListProductRequest) returns (GetListProductResponse) {}

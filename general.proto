@@ -14,3 +14,5 @@ enum UserRole {
   supplier = 1;
   admin = 2;
 }
+
+message Pong { string message = 1; }

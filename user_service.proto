@@ -8,6 +8,8 @@ import "general.proto";
 option go_package = "./pb";
 
 service UserService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
+
   rpc CreateUser(CreateUserRequest) returns (GeneralResponse) {}
   rpc ActiveUser(google.protobuf.Empty) returns (GeneralResponse) {}
   rpc DeleteUser(google.protobuf.Empty) returns (GeneralResponse) {}
