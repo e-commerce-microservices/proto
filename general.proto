@@ -1,16 +1,10 @@
 syntax = "proto3";
 
-package proto;
+package ecommerce;
 
 option go_package = "./pb";
 
 message GeneralResponse {
   string message = 1;
   int32 status_code = 2;
-}
-
-enum UserRole {
-  customer = 0;
-  supplier = 1;
-  admin = 2;
 }
