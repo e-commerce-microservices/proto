@@ -31,6 +31,7 @@ message UserClaimsResponse {
 // AuthService handle authentication and authorization for ecommerces project
 service AuthService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
+
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
   rpc GetUserClaims(google.protobuf.Empty) returns (UserClaimsResponse) {

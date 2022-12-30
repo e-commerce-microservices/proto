@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ecommerce;
+
+import "google/protobuf/empty.proto";
+import "general.proto";
+
+option go_package = "./pb";
+
+service ImageService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
+}
