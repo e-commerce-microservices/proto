@@ -26,5 +26,5 @@ message ImageInfo {
 
 service ImageService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
-  rpc CreateImage(stream UploadImageRequest) returns (UploadImageResponse) {}
+  rpc UploadImage(stream UploadImageRequest) returns (UploadImageResponse) {}
 }

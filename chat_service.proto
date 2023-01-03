@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ecommerce;
+
+option go_package = "./pb";
+
+message ChatMessage {
+  string from = 1;
+  string msg = 2;
+  string time = 3;
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+}
+
+message Empty {}
+
+message UserList { repeated User users = 1; }
+
+message JoinResponse {
+  int32 error = 1;
+  string msg = 2;
+}
