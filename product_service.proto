@@ -39,10 +39,12 @@ message GetListProductResponse { repeated Product list_product = 1; }
 message Category {
   int64 category_id = 1;
   string name = 2;
+  string thumbnail = 3;
 }
 message CreateCategoryRequest {
   string name = 1;
   int64 category_id = 2;
+  string thumbnail = 3;
 }
 message GetListCategoryResponse { repeated Category list_category = 1; }
 
