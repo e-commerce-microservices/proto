@@ -13,7 +13,7 @@ message Product {
   int64 category_id = 2;
   string name = 3;
   string desc = 4;
-  float price = 5;
+  int64 price = 5;
   string thumbnail = 6;
   int32 inventory = 7;
   google.protobuf.Timestamp created_at = 8;
@@ -24,7 +24,7 @@ message CreateProductRequest {
   int64 category_id = 2;
   string product_name = 3;
   string desc = 4;
-  float price = 5;
+  int64 price = 5;
   string thumbnail = 6;
   int64 inventory = 7;
 }
