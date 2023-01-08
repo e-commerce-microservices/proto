@@ -28,12 +28,16 @@ message UserClaimsResponse {
   UserRole user_role = 3;
 }
 
+message RefreshTokenRequest { string refresh_token = 1; }
+
 // AuthService handle authentication and authorization for ecommerces project
 service AuthService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
 
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Register(RegisterRequest) returns (GeneralResponse) {}
+  rpc Refresh(RefreshTokenRequest) returns (LoginResponse) {}
+
   rpc GetUserClaims(google.protobuf.Empty) returns (UserClaimsResponse) {
     option deprecated = true;
   }
