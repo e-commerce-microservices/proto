@@ -51,7 +51,10 @@ message CreateCategoryRequest {
 }
 message GetListCategoryResponse { repeated Category list_category = 1; }
 
-message GetRecommendProductRequest { int32 limit = 1; }
+message GetRecommendProductRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
 
 service ProductService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
