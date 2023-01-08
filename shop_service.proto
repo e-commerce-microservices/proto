@@ -6,6 +6,8 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "general.proto";
 
+option go_package = "./pb";
+
 message RegisterShopRequest {
   int64 seller_id = 1;
   repeated int64 category_id = 2;
