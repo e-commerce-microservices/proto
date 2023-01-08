@@ -34,10 +34,13 @@ message CreateProductRequest {
 
 message GetProductRequest { int64 product_id = 1; }
 message CreateProductResponse { Product new_product = 1; }
-
 message GetListProductRequest { int64 category_id = 1; }
-
 message GetListProductResponse { repeated Product list_product = 1; }
+message GetRecommendProductRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+message GetProductBySupplierRequest { int64 supplier_id = 1; }
 
 message Category {
   int64 category_id = 1;
@@ -51,11 +54,6 @@ message CreateCategoryRequest {
 }
 message GetListCategoryResponse { repeated Category list_category = 1; }
 
-message GetRecommendProductRequest {
-  int32 limit = 1;
-  int32 offset = 2;
-}
-
 service ProductService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
 
@@ -63,6 +61,8 @@ service ProductService {
   rpc GetProduct(GetProductRequest) returns (Product) {}
   rpc GetListProduct(GetListProductRequest) returns (GetListProductResponse) {}
   rpc GetRecomendProduct(GetRecommendProductRequest)
+      returns (GetListProductResponse) {}
+  rpc GetProductBySupplier(GetProductBySupplierRequest)
       returns (GetListProductResponse) {}
 
   rpc CreateCategory(CreateCategoryRequest) returns (GeneralResponse) {}
