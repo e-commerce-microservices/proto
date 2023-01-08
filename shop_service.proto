@@ -24,11 +24,11 @@ service ShopService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc RegisterShop(RegisterShopRequest) returns (GeneralResponse) {}
 
-  rpc GetShop(GetShopRequest) returns () {}
+  rpc GetShop(GetShopRequest) returns (GeneralResponse) {}
   rpc AddProduct(AddProductRequest) returns (GeneralResponse) {}
   rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
-  rpc FollowShop(FollowShopRequest) returns () {}
+  rpc FollowShop(FollowShopRequest) returns (GeneralResponse) {}
   //   rpc GetAllFollers() returns () {}
   //   rpc UpdateProfile() returns () {}
 }
