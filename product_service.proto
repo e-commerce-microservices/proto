@@ -19,6 +19,7 @@ message Product {
   google.protobuf.Timestamp created_at = 8;
   google.protobuf.Timestamp updated_at = 9;
   int64 product_id = 10;
+  string brand = 11;
 }
 
 message CreateProductRequest {
@@ -28,6 +29,7 @@ message CreateProductRequest {
   int64 price = 5;
   string thumbnail = 6;
   int64 inventory = 7;
+  string brand = 8;
 }
 
 message GetProductRequest { int64 product_id = 1; }
