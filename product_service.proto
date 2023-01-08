@@ -52,7 +52,11 @@ message CreateCategoryRequest {
   int64 category_id = 2;
   string thumbnail = 3;
 }
-message GetListCategoryResponse { repeated Category list_category = 1; }
+message GetListCategoryResponse {
+  repeated Category list_category = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
 
 service ProductService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
