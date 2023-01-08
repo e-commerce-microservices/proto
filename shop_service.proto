@@ -22,6 +22,8 @@ message FollowShopRequest { int64 shop_id = 1; }
 message AddProductRequest {}
 message UpdateProductRequest {}
 
+message GetShopResponse { google.protobuf.Timestamp created_at = 1; }
+
 service ShopService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc RegisterShop(RegisterShopRequest) returns (GeneralResponse) {}
@@ -31,6 +33,5 @@ service ShopService {
   rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
   rpc FollowShop(FollowShopRequest) returns (GeneralResponse) {}
-  //   rpc GetAllFollers() returns () {}
   //   rpc UpdateProfile() returns () {}
 }
