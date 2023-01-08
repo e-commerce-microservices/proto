@@ -51,13 +51,15 @@ message CreateCategoryRequest {
 }
 message GetListCategoryResponse { repeated Category list_category = 1; }
 
+message GetRecommendProductRequest { int32 limit = 1; }
+
 service ProductService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
 
   rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
   rpc GetProduct(GetProductRequest) returns (Product) {}
   rpc GetListProduct(GetListProductRequest) returns (GetListProductResponse) {}
-  rpc GetRecomendProduct(google.protobuf.Empty)
+  rpc GetRecomendProduct(GetRecommendProductRequest)
       returns (GetListProductResponse) {}
 
   rpc CreateCategory(CreateCategoryRequest) returns (GeneralResponse) {}
