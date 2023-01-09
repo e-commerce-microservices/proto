@@ -62,6 +62,15 @@ message CreateCategoryRequest {
 }
 message GetListCategoryResponse { repeated Category list_category = 1; }
 
+message UpdateProductRequest {
+  int64 product_id = 1;
+  string name = 2;
+  string price = 3;
+  string thumbnail = 4;
+  int64 inventory = 5;
+  string brand = 6;
+}
+
 service ProductService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
 
@@ -72,6 +81,7 @@ service ProductService {
       returns (GetListProductResponse) {}
   rpc GetProductBySupplier(GetProductBySupplierRequest)
       returns (GetListProductResponse) {}
+  rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
   rpc CreateCategory(CreateCategoryRequest) returns (GeneralResponse) {}
   rpc GetListCategory(google.protobuf.Empty) returns (GetListCategoryResponse) {
