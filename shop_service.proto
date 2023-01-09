@@ -20,7 +20,7 @@ message GetShopRequest { int64 shop_id = 1; }
 message FollowShopRequest { int64 shop_id = 1; }
 
 message AddProductRequest {}
-message UpdateProductRequest {}
+// message UpdateProductRequest {}
 
 message GetShopResponse { google.protobuf.Timestamp created_at = 1; }
 
@@ -30,7 +30,7 @@ service ShopService {
 
   rpc GetShop(GetShopRequest) returns (GeneralResponse) {}
   rpc AddProduct(AddProductRequest) returns (GeneralResponse) {}
-  rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
+  // rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
   rpc FollowShop(FollowShopRequest) returns (GeneralResponse) {}
   //   rpc UpdateProfile() returns () {}
