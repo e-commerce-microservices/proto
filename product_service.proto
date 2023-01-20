@@ -23,6 +23,7 @@ message Product {
 }
 
 message CreateProductRequest {
+  int64 supplier_id = 1;
   int64 category_id = 2;
   string product_name = 3;
   string desc = 4;
@@ -31,9 +32,9 @@ message CreateProductRequest {
   int64 inventory = 7;
   string brand = 8;
 }
+message CreateProductResponse { string message = 1; }
 
 message GetProductRequest { int64 product_id = 1; }
-message CreateProductResponse { Product new_product = 1; }
 message GetListProductRequest {
   int64 category_id = 1;
   int32 limit = 2;
@@ -44,6 +45,7 @@ message GetRecommendProductRequest {
   int32 limit = 1;
   int32 offset = 2;
 }
+
 message GetProductBySupplierRequest {
   int64 supplier_id = 1;
   int32 limit = 2;
