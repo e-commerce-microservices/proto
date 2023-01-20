@@ -14,15 +14,9 @@ message UploadImageRequest {
   }
 }
 
-message UploadImageResponse {
-  string id = 1;
-  uint32 size = 2;
-}
+message UploadImageResponse { string image_url = 1; }
 
-message ImageInfo {
-  string id = 1;
-  string image_type = 2;
-}
+message ImageInfo { string image_type = 2; }
 
 service ImageService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
