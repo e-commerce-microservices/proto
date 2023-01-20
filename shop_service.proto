@@ -5,6 +5,7 @@ package ecommerce;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "general.proto";
+import "product_service.proto";
 
 option go_package = "./pb";
 
@@ -19,9 +20,6 @@ message GetShopRequest { int64 shop_id = 1; }
 
 message FollowShopRequest { int64 shop_id = 1; }
 
-message AddProductRequest {}
-// message UpdateProductRequest {}
-
 message GetShopResponse { google.protobuf.Timestamp created_at = 1; }
 
 service ShopService {
@@ -29,7 +27,7 @@ service ShopService {
   rpc RegisterShop(RegisterShopRequest) returns (GeneralResponse) {}
 
   rpc GetShop(GetShopRequest) returns (GeneralResponse) {}
-  rpc AddProduct(AddProductRequest) returns (GeneralResponse) {}
+  rpc AddProduct(CreateProductRequest) returns (CreateProductResponse) {}
   // rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
   rpc FollowShop(FollowShopRequest) returns (GeneralResponse) {}
