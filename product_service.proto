@@ -28,7 +28,7 @@ message CreateProductRequest {
   string product_name = 3;
   string desc = 4;
   int64 price = 5;
-  string thumbnail = 6;
+  string thumbnailDataChunk = 6;
   int64 inventory = 7;
   string brand = 8;
 }
