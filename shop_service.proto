@@ -22,12 +22,17 @@ message FollowShopRequest { int64 shop_id = 1; }
 
 message GetShopResponse { google.protobuf.Timestamp created_at = 1; }
 
+message AddProductRequest {
+  CreateProductRequest req = 1;
+  string ThumbnailData = 2;
+}
+
 service ShopService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc RegisterShop(RegisterShopRequest) returns (GeneralResponse) {}
 
   rpc GetShop(GetShopRequest) returns (GeneralResponse) {}
-  rpc AddProduct(CreateProductRequest) returns (CreateProductResponse) {}
+  rpc AddProduct(AddProductRequest) returns (CreateProductResponse) {}
   // rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
   rpc FollowShop(FollowShopRequest) returns (GeneralResponse) {}
