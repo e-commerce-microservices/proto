@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ecommerce;
+
+option go_package = "./pb";
+
+message SearchProductRequest { string product_name = 1; }
+message SearchProductResponse {
+  message ProductInfo {
+    int64 product_id = 1;
+    string product_name = 2;
+  }
+  repeated ProductInfo list_product = 1;
+}
+
+service SearchService {
+  rpc SearchProduct(SearchProductRequest) returns (SearchProductResponse) {}
+}
