@@ -8,14 +8,17 @@ option go_package = "./pb";
 
 message SearchProductRequest { string product_name = 1; }
 message SearchProductResponse {
-  message ProductInfo {
-    int64 product_id = 1;
-    string product_name = 2;
-  }
-  repeated ProductInfo list_product = 1;
+  repeated string list_product_name = 1;
+  repeated int64 list_product_id = 2;
+}
+
+message AddProductRequest {
+  int64 product_id = 1;
+  string product_name = 2;
 }
 
 service SearchService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc SearchProduct(SearchProductRequest) returns (SearchProductResponse) {}
+  rpc AddProduct(AddProductRequest) returns (google.protobuf.Empty) {}
 }
