@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 package ecommerce;
+import "google/protobuf/empty.proto";
+import "general.proto";
 
 option go_package = "./pb";
 
@@ -14,5 +16,6 @@ message SearchProductResponse {
 }
 
 service SearchService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc SearchProduct(SearchProductRequest) returns (SearchProductResponse) {}
 }
