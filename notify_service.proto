@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ecommerce;
+
+import "google/protobuf/empty.proto";
+import "general.proto";
+
+option go_package = "./pb";
+
+message CreateNotifyRequest { string message = 1; }
+
+message CreateNotifyResponse { string message = 1; }
+
+service NotifyService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
+  rpc CreateNotify(CreateNotifyRequest) returns (CreateNotifyResponse) {}
+}
