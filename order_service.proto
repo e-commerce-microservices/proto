@@ -29,10 +29,14 @@ message UpdateOrderStatusRequest {
 }
 message UpdateOrderStatusResponse { string message = 1; }
 
+message HandleOrderRequest { int64 order_id = 1; }
+message HandleOrderResponse { string message = 1; }
+
 service OrderService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
   rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse) {}
   rpc UpdateOrder(UpdateOrderStatusRequest)
       returns (UpdateOrderStatusResponse) {}
+  rpc HandleOrder(HandleOrderRequest) returns (HandleOrderResponse) {}
 }
