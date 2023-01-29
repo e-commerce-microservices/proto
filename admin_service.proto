@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ecommerce;
+
+import "google/protobuf/empty.proto";
+import "general.proto";
+
+option go_package = "./pb";
+
+message ReportShopRequest {}
+message ReportShopResponse {}
+
+message DeleteShopRequest {}
+message DeleteShopResponse {}
