@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package ecommerce;
 
-import "google/protobuf/empty.proto";
-import "general.proto";
+// import "google/protobuf/empty.proto";
+// import "general.proto";
 
 option go_package = "./pb";
 
