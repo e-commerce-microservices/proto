@@ -35,12 +35,16 @@ message CreateProductRequest {
 message CreateProductResponse { string message = 1; }
 
 message GetProductRequest { int64 product_id = 1; }
+
 message GetListProductRequest {
   int64 category_id = 1;
   int32 limit = 2;
   int32 offset = 3;
 }
 message GetListProductResponse { repeated Product list_product = 1; }
+
+message GetListProductByIDsRequest { repeated int64 list_id = 1; }
+
 message GetRecommendProductRequest {
   int32 limit = 1;
   int32 offset = 2;
@@ -79,8 +83,11 @@ service ProductService {
   rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
   rpc GetProduct(GetProductRequest) returns (Product) {}
   rpc GetListProduct(GetListProductRequest) returns (GetListProductResponse) {}
+  rpc GetListProductByIDs(GetListProductByIDsRequest)
+      returns (GetListProductResponse) {}
   rpc GetRecomendProduct(GetRecommendProductRequest)
       returns (GetListProductResponse) {}
+
   rpc GetProductBySupplier(GetProductBySupplierRequest)
       returns (GetListProductResponse) {}
   rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
