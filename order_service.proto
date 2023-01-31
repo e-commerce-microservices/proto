@@ -45,6 +45,9 @@ message GetWaitingOrderBySupplierResponse { repeated Order list_order = 1; }
 message GetWaitingOrderByCustomerRequest { int64 customer_id = 1; }
 message GetWaitingOrderByCustomerResponse { repeated Order list_order = 1; }
 
+message CheckOrderIsHandledRequest { int64 product_id = 1; }
+message CheckOrderIsHandledResponse { bool is_bought = 1; }
+
 service OrderService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
@@ -56,4 +59,6 @@ service OrderService {
       returns (GetWaitingOrderBySupplierResponse) {}
   rpc GetWaitingOrderByCustomer(GetWaitingOrderByCustomerRequest)
       returns (GetWaitingOrderByCustomerResponse) {}
+  rpc CheckOrderIsHandled(CheckOrderIsHandledRequest)
+      returns (CheckOrderIsHandledResponse) {}
 }
