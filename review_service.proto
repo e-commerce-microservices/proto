@@ -6,8 +6,6 @@ import "general.proto";
 
 option go_package = "./pb";
 
-message GetAllReviewRequest { int64 product_id = 1; }
-
 enum NUM_STAR {
   ONE = 0;
   TWO = 1;
@@ -24,6 +22,7 @@ message Review {
   NUM_STAR num_star = 5;
 }
 
+message GetAllReviewRequest { int64 product_id = 1; }
 message GetAllReviewResponse { repeated Review list_review = 1; }
 
 message CreateReviewRequest {

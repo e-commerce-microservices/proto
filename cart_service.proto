@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ecommerce;
+import "google/protobuf/empty.proto";
+import "general.proto";
+
+option go_package = "./pb";
+
+message CreateCartRequest { int64 product_id = 1; }
+message CreateCartResponse { string message = 1; }
+
+message DeleteCartRequest { int64 cart_id = 1; }
+message DeleteCartResponse { string message = 1; }
+
+service CartService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
+  rpc CreateCart(CreateCartRequest) returns (CreateCartResponse) {}
+  rpc DeleteCart(DeleteCartRequest) returns (DeleteCartResponse) {}
+}
