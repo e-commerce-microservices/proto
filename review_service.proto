@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package ecommerce;
+import "google/protobuf/empty.proto";
+import "general.proto";
+
+option go_package = "./pb";
+
+message GetAllReviewRequest { int64 product_id = 1; }
+
+enum NUM_STAR {
+  ONE = 1;
+  TWO = 2;
+  THREE = 3;
+  FOUR = 4;
+  FIVE = 5;
+}
+
+message Review {
+  int64 review_id = 1;
+  int64 user_id = 2;
+  int64 product_id = 3;
+  repeated string image_url = 4;
+  NUM_STAR num_star = 5;
+}
+
+message GetAllReviewResponse { repeated Review list_review = 1; }
+
+message CreateReviewRequest {
+  int64 user_id = 1;
+  int64 product_id = 2;
+  string review = 3;
+  repeated string image_data_chunk = 4;
+  NUM_STAR num_start = 5;
+}
+
+message CreateReviewResponse { string message = 1; }
+
+message UpdateReviewRequest {
+  int64 review_id = 1;
+  string new_review = 3;
+}
+message UpdateReviewResponse { string message = 1; }
+
+message DeleteReviewRequest { int64 review_id = 1; }
+
+message DeleteReviewResponse { string message = 1; }
+
+service ReviewService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
+  rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse) {}
+  rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {}
+  rpc DeleteReview(DeleteReviewRequest) returns (DeleteReviewResponse) {}
+}
