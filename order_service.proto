@@ -69,4 +69,6 @@ service OrderService {
       returns (GetOrderByProductIdResponse) {}
   rpc CheckOrderIsHandled(CheckOrderIsHandledRequest)
       returns (CheckOrderIsHandledResponse) {}
+  rpc GetHandledOrderByCustomer(GetHandledOrderByCustomerRequest)
+      returns (GetHandledOrderByCustomerResponse) {}
 }
