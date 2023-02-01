@@ -43,8 +43,11 @@ message HandleOrderResponse { string message = 1; }
 message GetWaitingOrderBySupplierRequest { int64 supplier_id = 1; }
 message GetWaitingOrderBySupplierResponse { repeated Order list_order = 1; }
 
-message GetWaitingOrderByCustomerRequest { int64 customer_id = 1; }
+message GetWaitingOrderByCustomerRequest {}
 message GetWaitingOrderByCustomerResponse { repeated Order list_order = 1; }
+
+message GetHandledOrderByCustomerRequest {}
+message GetHandledOrderByCustomerResponse { repeated Order list_order = 1; }
 
 message GetOrderByProductIdRequest { int64 product_id = 1; }
 message GetOrderByProductIdResponse { int64 count = 1; }
