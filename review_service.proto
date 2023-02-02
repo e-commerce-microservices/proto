@@ -51,5 +51,5 @@ service ReviewService {
   rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse) {}
   rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {}
   rpc DeleteReview(DeleteReviewRequest) returns (DeleteReviewResponse) {}
-  rpc GetAllReview(CreateReviewRequest) returns (CreateReviewResponse) {}
+  rpc GetAllReview(CreateReviewRequest) returns (GetAllReviewResponse) {}
 }
