@@ -28,7 +28,8 @@ service ShopService {
 
   rpc GetShop(GetShopRequest) returns (GeneralResponse) {}
   rpc AddProduct(CreateProductRequest) returns (CreateProductResponse) {}
-  // rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
+  rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {}
+  rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
 
   rpc FollowShop(FollowShopRequest) returns (GeneralResponse) {}
   //   rpc UpdateProfile() returns () {}
