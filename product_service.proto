@@ -92,6 +92,9 @@ message IncInventoryRequest {
 }
 message IncInventoryResponse { string message = 1; }
 
+message DeleteProductRequest { int64 product_id = 1; }
+message DeleteProductResponse { string message = 1; }
+
 service ProductService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
 
@@ -102,6 +105,7 @@ service ProductService {
       returns (GetListProductResponse) {}
   rpc GetRecomendProduct(GetRecommendProductRequest)
       returns (GetListProductResponse) {}
+  rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {}
 
   rpc GetProductBySupplier(GetProductBySupplierRequest)
       returns (GetListProductResponse) {}
