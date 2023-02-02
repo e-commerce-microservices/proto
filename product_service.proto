@@ -113,5 +113,5 @@ service ProductService {
   rpc GetListProductInventory(GetInventoryRequest)
       returns (GetInventoryResponse) {}
   rpc DescInventory(DescInventoryRequest) returns (DescInventoryResponse) {}
-  rpc IncInventory(DescInventoryRequest) returns (DescInventoryResponse) {}
+  rpc IncInventory(IncInventoryRequest) returns (IncInventoryResponse) {}
 }
