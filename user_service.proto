@@ -7,6 +7,9 @@ import "general.proto";
 
 option go_package = "./pb";
 
+message GetListUserRequest { repeated int64 list_user_id = 1; }
+message GetListUserResponse { repeated User list_user = 1; }
+
 service UserService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
 
@@ -17,6 +20,7 @@ service UserService {
   rpc GetMe(google.protobuf.Empty) returns (User) {}
   rpc GetUserByEmail(GetUserByEmailRequest) returns (User) {}
   rpc GetUserById(GetUserByIDRequest) returns (User) {}
+  rpc GetListUser(GetListUserRequest) returns (GetListUserResponse) {}
 
   rpc UpdateEmail(UpdateEmailRequest) returns (GeneralResponse) {}
 
