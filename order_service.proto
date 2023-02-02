@@ -26,7 +26,10 @@ message CreateOrderRequest {
 }
 message CreateOrderResponse { string message = 1; }
 
-message DeleteOrderRequest { string order_id = 1; }
+message DeleteOrderRequest {
+  int64 order_id = 1;
+  int64 product_id = 2;
+}
 message DeleteOrderResponse { string message = 1; }
 
 enum OrderStatus {
