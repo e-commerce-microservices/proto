@@ -29,6 +29,7 @@ message CreateOrderResponse { string message = 1; }
 message DeleteOrderRequest {
   int64 order_id = 1;
   int64 product_id = 2;
+  int32 inventory_count = 3;
 }
 message DeleteOrderResponse { string message = 1; }
 
