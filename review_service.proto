@@ -23,8 +23,8 @@ message Review {
   string content = 6;
 }
 
-message GetAllReviewRequest { int64 product_id = 1; }
-message GetAllReviewResponse { repeated Review list_review = 1; }
+message GetAllReviewByProductIDRequest { int64 product_id = 1; }
+message GetAllReviewByProductIDResponse { repeated Review list_review = 1; }
 
 message CreateReviewRequest {
   int64 product_id = 1;
@@ -51,5 +51,6 @@ service ReviewService {
   rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse) {}
   rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {}
   rpc DeleteReview(DeleteReviewRequest) returns (DeleteReviewResponse) {}
-  rpc GetAllReview(CreateReviewRequest) returns (GetAllReviewResponse) {}
+  rpc GetAllReviewByProductID(GetAllReviewByProductIDRequest)
+      returns (GetAllReviewByProductIDResponse) {}
 }
