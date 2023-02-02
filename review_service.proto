@@ -20,6 +20,7 @@ message Review {
   int64 product_id = 3;
   repeated string image_url = 4;
   NUM_STAR num_star = 5;
+  string content = 6;
 }
 
 message GetAllReviewRequest { int64 product_id = 1; }
@@ -30,9 +31,10 @@ message CreateReviewRequest {
   string review = 2;
   repeated string image_data_chunk = 3;
   NUM_STAR num_star = 4;
+  string content = 5;
 }
 
-message CreateReviewResponse { repeated Review list_review = 1; }
+message CreateReviewResponse { string message = 1; }
 
 message UpdateReviewRequest {
   int64 review_id = 1;
