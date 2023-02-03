@@ -75,6 +75,7 @@ message UpdateProductRequest {
   string thumbnail = 4;
   int64 inventory = 5;
   string brand = 6;
+  int64 supplier_id = 7;
 }
 
 message GetInventoryRequest { int64 product_id = 1; }
