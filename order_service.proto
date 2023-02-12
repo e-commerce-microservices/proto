@@ -31,7 +31,7 @@ message CreateOrderRequest {
     int64 customer_id = 3;
     int64 supplier_id = 4;
   }
-  repeated list_order = 2;
+  repeated order list_order = 2;
 }
 message CreateOrderResponse { string message = 1; }
 
