@@ -30,6 +30,7 @@ message CreateOrderRequest {
     int32 order_quantity = 2;
     int64 customer_id = 3;
     int64 supplier_id = 4;
+    int64 cart_id = 5;
   }
   repeated order list_order = 2;
 }
