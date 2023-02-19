@@ -2,33 +2,50 @@ syntax = "proto3";
 
 package ecommerce;
 
+import "google/protobuf/empty.proto";
+
 option go_package = "./pb";
 
-// message ChatMessage {
-//   string from = 1;
-//   string msg = 2;
-//   string time = 3;
-// }
+message InitiateRequest {
+  string name = 1;
+  string avatar_url = 2;
+}
+message InitiateResponse { int32 id = 1; }
 
-// message User {
-//   string id = 1;
-//   string name = 2;
-// }
+message MessageRequest {
+  int32 id = 1;
+  string message = 2;
+}
 
-// message Empty {}
+enum Status {
+  UNKOWN = 0;
+  ONLINE = 1;
+  OFFLINE = 2;
+}
 
-// message UserList { repeated User users = 1; }
+message User {
+  int32 id = 1;
+  string name = 2;
+  Status status = 3;
+  string avatar = 4;
+}
 
-// message JoinResponse {
-//   int32 error = 1;
-//   string msg = 2;
-// }
+message UserStreamResponse { repeated User users = 1; }
 
-// message ReceiveMsgRequest { string user = 1; }
+message StreamRequest { int32 id = 1; }
 
-// service ChatService {
-//   rpc join(User) returns (JoinResponse) {}
-//   rpc sendMsg(ChatMessage) returns (Empty) {}
-//   rpc receiveMsg(Empty) returns (stream ChatMessage) {}
-//   rpc getAllUsers(Empty) returns (UserList) {}
-// }
+message StreamMessage {
+  int32 id = 1;
+  string sender_name = 2;
+  string sender_avatar = 3;
+  string message = 4;
+}
+
+message ReceiveMsgRequest { string user = 1; }
+
+service ChatService {
+  rpc ChatInitiate(InitiateRequest) returns (InitiateResponse) {}
+  rpc SendMessage(MessageRequest) returns (google.protobuf.Empty) {}
+  rpc UserStream(StreamRequest) returns (stream UserStreamResponse) {}
+  rpc ChatStream(StreamRequest) returns (stream StreamMessage) {};
+}
