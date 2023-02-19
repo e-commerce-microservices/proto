@@ -3,6 +3,7 @@ syntax = "proto3";
 package ecommerce;
 
 import "google/protobuf/empty.proto";
+import "general.proto";
 
 option go_package = "./pb";
 
@@ -44,6 +45,7 @@ message StreamMessage {
 message ReceiveMsgRequest { string user = 1; }
 
 service ChatService {
+  rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc ChatInitiate(InitiateRequest) returns (InitiateResponse) {}
   rpc SendMessage(MessageRequest) returns (google.protobuf.Empty) {}
   rpc UserStream(StreamRequest) returns (stream UserStreamResponse) {}
