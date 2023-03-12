@@ -16,9 +16,19 @@ message CreateReportResponse { string message = 1; }
 message HandleReportRequest { int64 report_id = 1; }
 message HandleReportResponse { string message = 1; }
 
+message GetAllReportResponse {
+  message ProductReport {
+    string productImage = 1;
+    string productName = 2;
+    string description = 3;
+  }
+  repeated ProductReport listReport = 1;
+}
+
 service AdminService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc CreateReport(CreateReportRequest) returns (CreateReportResponse) {}
   rpc HandleReport(HandleReportRequest) returns (HandleReportResponse) {}
   rpc DeleteReport(HandleReportRequest) returns (HandleReportResponse) {}
+  rpc GetAllReport(google.protobuf.Empty) returns (GetAllReportResponse) {}
 }
