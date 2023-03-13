@@ -95,4 +95,8 @@ service OrderService {
   rpc GetHandledOrderBySupllier(google.protobuf.Empty)
       returns (GetHandledOrderBySupplierResponse) {}
   rpc GetSoldProduct(GetSoldProductRequest) returns (GetSoldProductResponse) {}
+  rpc GetCancelOrderByCustomer(google.protobuf.Empty)
+      returns (GetHandledOrderByCustomerResponse) {}
+  rpc GetCancelOrderBySupplier(google.protobuf.Empty)
+      returns (GetHandledOrderBySupplierResponse) {}
 }
