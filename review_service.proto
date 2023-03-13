@@ -26,7 +26,10 @@ message CreateReviewRequest {
   string content = 5;
 }
 
-message CreateReviewResponse { string message = 1; }
+message CreateReviewResponse {
+  string message = 1;
+  Review review = 2;
+}
 
 message UpdateReviewRequest {
   int64 review_id = 1;
