@@ -20,13 +20,13 @@ message GetShopRequest { int64 shop_id = 1; }
 
 message FollowShopRequest { int64 shop_id = 1; }
 
-message GetShopResponse { google.protobuf.Timestamp created_at = 1; }
+message GetShopResponse { string name = 3; }
 
 service ShopService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc RegisterShop(RegisterShopRequest) returns (GeneralResponse) {}
 
-  rpc GetShop(GetShopRequest) returns (GeneralResponse) {}
+  rpc GetShop(GetShopRequest) returns (GetShopResponse) {}
   rpc AddProduct(CreateProductRequest) returns (CreateProductResponse) {}
   rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {}
   rpc UpdateProduct(UpdateProductRequest) returns (GeneralResponse) {}
