@@ -62,6 +62,7 @@ message User {
   bool active_status = 4;
   UserProfile profile = 5;
   repeated UserAddress address = 6;
+  string gender = 7;
 }
 
 message CreateUserRequest {
