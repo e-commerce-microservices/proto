@@ -20,6 +20,8 @@ message Product {
   google.protobuf.Timestamp updated_at = 9;
   int64 product_id = 10;
   string brand = 11;
+  float star_average = 12;
+  int64 total_sold = 13;
 }
 
 message CreateProductRequest {
