@@ -72,6 +72,9 @@ message GetOrderByProductIdResponse { int64 count = 1; }
 message CheckOrderIsHandledRequest { int64 product_id = 1; }
 message CheckOrderIsHandledResponse { bool is_bought = 1; }
 
+message GetSoldProductRequest { int64 product_id = 1; }
+message GetSoldProductResponse { int64 count = 1; }
+
 service OrderService {
   rpc Ping(google.protobuf.Empty) returns (Pong) {}
   rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
@@ -91,4 +94,5 @@ service OrderService {
       returns (GetHandledOrderByCustomerResponse) {}
   rpc GetHandledOrderBySupllier(google.protobuf.Empty)
       returns (GetHandledOrderBySupplierResponse) {}
+  rpc GetSoldProduct(GetSoldProductRequest) returns (GetSoldProductResponse) {}
 }
