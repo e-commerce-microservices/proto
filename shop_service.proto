@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ecommerce;
 
-import "google/protobuf/timestamp.proto";
+// import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "general.proto";
 import "product_service.proto";
