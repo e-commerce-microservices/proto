@@ -16,6 +16,9 @@ message Order {
   int64 customer_id = 3;
   int64 supplier_id = 4;
   int64 order_id = 5;
+  string address_name = 9;
+  string address_phone = 10;
+  string address_detail = 11;
 }
 
 message CreateOrderRequest {
