@@ -110,8 +110,11 @@ message DeleteProductByAdminRequest { int64 product_id = 1; }
 message DeleteProductByAdminResponse { string message = 1; }
 message GetCategoryBySupplierRequest { int64 supplier_id = 1; }
 message GetCategoryBySupplierResponse {
-  int64 category_id = 1;
-  string category_name = 2;
+  message CategoryDetail {
+    int64 category_id = 1;
+    string category_name = 2;
+  }
+  repeated CategoryDetail category_detail = 1;
 }
 
 service ProductService {
