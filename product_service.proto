@@ -62,6 +62,7 @@ message GetProductBySupplierRequest {
   bool byTime = 4;
   bool byPriceInc = 5;
   bool byPriceDesc = 6;
+  int64 category_id = 7;
 }
 
 message Category {
